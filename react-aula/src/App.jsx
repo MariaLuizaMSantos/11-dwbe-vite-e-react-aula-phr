@@ -1,117 +1,120 @@
 import { useState } from 'react'
-import FormularioProduto01 from './components/exemplo01/FormularioProduto.jsx'
-import FormularioProduto02 from './components/exemplo02/FormularioProduto.jsx'
-import FormularioProduto03 from './components/exemplo03/FormularioProduto.jsx'
-import FormularioProduto04 from './components/exemplo04/FormularioProduto.jsx'
-import FormularioProduto05 from './components/exemplo05/FormularioProduto.jsx'
-import FormularioProduto06 from './components/exemplo06/FormularioProduto.jsx'
-import FormularioProduto07 from './components/exemplo07/FormularioProduto.jsx'
-import FormularioProduto08 from './components/exemplo08/FormularioProduto.jsx'
-import FormularioProduto09 from './components/exemplo09/FormularioProduto.jsx'
-import FormularioProduto10 from './components/exemplo10/FormularioProduto.jsx'
-import FormularioProduto11 from './components/exemplo11/FormularioProduto.jsx'
-import FormularioProduto12 from './components/exemplo12/FormularioProduto.jsx'
-import FormularioProduto13 from './components/exemplo13/FormularioProduto.jsx'
-
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
 import './App.css'
 
 function App() {
-  const [exemplo, setExemplo] = useState('inicio')
-
-  if (exemplo === 'exemplo01') {
-    return <FormularioProduto01 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo02') {
-    return <FormularioProduto02 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo03') {
-    return <FormularioProduto03 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo04') {
-    return <FormularioProduto04 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo05') {
-    return <FormularioProduto05 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo06') {
-    return <FormularioProduto06 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo07') {
-    return <FormularioProduto07 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo08') {
-    return <FormularioProduto08 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo09') {
-    return <FormularioProduto09 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo10') {
-    return <FormularioProduto10 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo11') {
-    return <FormularioProduto11 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo12') {
-    return <FormularioProduto12 voltar={() => setExemplo('inicio')} />
-  }
-
-  if (exemplo === 'exemplo13') {
-    return <FormularioProduto13 voltar={() => setExemplo('inicio')} />
-  }
+  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Prática 11</h1>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo01')}>
-        Exemplo 01
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo02')}>
-        Exemplo 02
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo03')}>
-        Exemplo 03
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo04')}>
-        Exemplo 04
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo05')}>
-        Exemplo 05
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo06')}>
-        Exemplo 06
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo07')}>
-        Exemplo 07
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo08')}>
-        Exemplo 08
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo09')}>
-        Exemplo 09
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo10')}>
-        Exemplo 10
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo11')}>
-        Exemplo 11
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo12')}>
-        Exemplo 12
-      </button>
-      <button className="botao" type="button" onClick={() => setExemplo('exemplo13')}>
-        Exemplo 13
-      </button>
+      <section id="center">
+        <div className="hero">
+          <img src={heroImg} className="base" width="170" height="179" alt="" />
+          <img src={reactLogo} className="framework" alt="React logo" />
+          <img src={viteLogo} className="vite" alt="Vite logo" />
+        </div>
+        <div>
+          <h1>Get started</h1>
+          <p>
+            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
+          </p>
+        </div>
+        <button
+          type="button"
+          className="counter"
+          onClick={() => setCount((count) => count + 1)}
+        >
+          Count is {count}
+        </button>
+      </section>
+
+      <div className="ticks"></div>
+
+      <section id="next-steps">
+        <div id="docs">
+          <svg className="icon" role="presentation" aria-hidden="true">
+            <use href="/icons.svg#documentation-icon"></use>
+          </svg>
+          <h2>Documentation</h2>
+          <p>Your questions, answered</p>
+          <ul>
+            <li>
+              <a href="https://vite.dev/" target="_blank">
+                <img className="logo" src={viteLogo} alt="" />
+                Explore Vite
+              </a>
+            </li>
+            <li>
+              <a href="https://react.dev/" target="_blank">
+                <img className="button-icon" src={reactLogo} alt="" />
+                Learn more
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div id="social">
+          <svg className="icon" role="presentation" aria-hidden="true">
+            <use href="/icons.svg#social-icon"></use>
+          </svg>
+          <h2>Connect with us</h2>
+          <p>Join the Vite community</p>
+          <ul>
+            <li>
+              <a href="https://github.com/vitejs/vite" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#github-icon"></use>
+                </svg>
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://chat.vite.dev/" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#discord-icon"></use>
+                </svg>
+                Discord
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/vite_js" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#x-icon"></use>
+                </svg>
+                X.com
+              </a>
+            </li>
+            <li>
+              <a href="https://bsky.app/profile/vite.dev" target="_blank">
+                <svg
+                  className="button-icon"
+                  role="presentation"
+                  aria-hidden="true"
+                >
+                  <use href="/icons.svg#bluesky-icon"></use>
+                </svg>
+                Bluesky
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <div className="ticks"></div>
+      <section id="spacer"></section>
     </>
   )
 }
